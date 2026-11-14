@@ -1,0 +1,47 @@
+.bento-card {
+  border-radius: var(--radius-bento);
+  border: 1px solid var(--color-border);
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition-base),
+              box-shadow var(--transition-base),
+              border-color var(--transition-base),
+              background-color var(--transition-base);
+  box-shadow: var(--shadow-card);
+}
+
+.bento-card--surface {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+}
+
+.bento-card--light {
+  background-color: #FAF8F5;
+  color: var(--color-text);
+}
+
+.bento-card--dark {
+  background-color: var(--color-dark-surface);
+  color: var(--color-dark-text);
+  border-color: var(--color-dark-border);
+}
+
+.bento-card--tinted {
+  background-color: var(--color-surface-soft);
+  color: var(--color-text);
+}
+
+.bento-card--hover:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: var(--color-border-hover);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bento-card,
+  .bento-card--hover:hover {
+    transform: none !important;
+    transition: none !important;
+  }
+}
+

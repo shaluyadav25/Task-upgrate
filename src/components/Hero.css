@@ -1,0 +1,540 @@
+.hero-section {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: clamp(6.5rem, 12vw, 8.5rem);
+  padding-bottom: clamp(4rem, 8vw, 6rem);
+  position: relative;
+  overflow: hidden;
+  background-color: #0A0F1F;
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  position: relative;
+  z-index: 5;
+}
+
+/* Left Content */
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-badge-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.09);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #FFFFFF;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.hero-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--color-secondary);
+  border: 1px solid #111111;
+  display: inline-block;
+  box-shadow: 0 0 8px rgba(198, 244, 50, 0.6);
+}
+
+.hero-city-tag {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: #94A3B8;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.hero-title {
+  font-size: var(--text-hero);
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  color: #FFFFFF;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.hero-title-highlight {
+  position: relative;
+  display: inline-block;
+  color: var(--color-secondary);
+  white-space: nowrap;
+}
+
+.hero-underline-svg {
+  position: absolute;
+  left: -2%;
+  bottom: -0.18em;
+  width: 104%;
+  height: 0.3em;
+  pointer-events: none;
+}
+
+.hero-subline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-heading);
+  font-size: clamp(1.2rem, 2.2vw, 1.65rem);
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.hero-subline-dot {
+  color: var(--color-secondary);
+  font-size: 1.2em;
+}
+
+.hero-description {
+  font-size: var(--text-lead);
+  line-height: 1.6;
+  color: #D1D5DB;
+  max-width: 540px;
+  margin-bottom: 2.25rem;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.hero-btn-explore {
+  border-color: rgba(255, 255, 255, 0.35) !important;
+  color: #FFFFFF !important;
+  background-color: rgba(255, 255, 255, 0.06) !important;
+  backdrop-filter: blur(8px);
+}
+
+.hero-btn-explore:hover {
+  background-color: #FFFFFF !important;
+  color: #111111 !important;
+  border-color: #FFFFFF !important;
+}
+
+.hero-proof-bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.hero-avatars {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid #0A0F1F;
+  margin-left: -9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.avatar:first-child {
+  margin-left: 0;
+}
+
+.avatar--1 { background: #4F46E5; }
+.avatar--2 { background: #1E293B; }
+.avatar--3 { background: #7C3AED; }
+.avatar--4 { background: #111111; color: var(--color-secondary); font-size: 0.65rem; }
+
+.hero-proof-text {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--text-sm);
+  line-height: 1.35;
+}
+
+.hero-proof-text strong {
+  color: #FFFFFF;
+  font-weight: 700;
+}
+
+.hero-proof-text span {
+  color: #94A3B8;
+}
+
+/* Right Stage: Floating Cards Collage */
+.hero-visual {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-stage {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  height: 480px;
+}
+
+.floating-card {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: var(--radius-card);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 24px 50px -10px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow var(--transition-fast);
+}
+
+.floating-card:hover {
+  box-shadow: 0 32px 65px -10px rgba(0, 0, 0, 0.55);
+}
+
+/* 1. CRM Dashboard Card */
+.crm-card {
+  top: 15px;
+  left: 0;
+  width: 320px;
+  padding: 1.35rem;
+  z-index: 3;
+}
+
+.crm-card__header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.85rem;
+}
+
+.crm-card__indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-secondary);
+  border: 1.5px solid #111111;
+}
+
+.crm-card__title {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #111111;
+  flex: 1;
+}
+
+.crm-card__tag {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  background: rgba(79, 70, 229, 0.1);
+  color: var(--color-primary);
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+}
+
+.crm-card__metric {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.crm-card__num {
+  font-family: var(--font-heading);
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: #111111;
+  letter-spacing: -0.03em;
+}
+
+.crm-card__growth {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #059669;
+}
+
+.crm-pipeline__bar {
+  height: 7px;
+  width: 100%;
+  background: #E2E8F0;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.crm-pipeline__fill {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  border-radius: 4px;
+}
+
+.crm-pipeline__labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.68rem;
+  font-family: var(--font-mono);
+  color: #64748B;
+}
+
+.crm-pipeline__won {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+/* 2. Growth Chart Card */
+.chart-card {
+  bottom: 25px;
+  right: 0;
+  width: 290px;
+  padding: 1.25rem;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.94);
+}
+
+.chart-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.25rem;
+}
+
+.chart-card__badge {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--color-primary);
+}
+
+.chart-card__rate {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: var(--color-primary);
+}
+
+.chart-card__label {
+  font-size: 0.78rem;
+  color: #64748B;
+  margin-bottom: 0.6rem;
+}
+
+.chart-card__svg {
+  width: 100%;
+  height: 60px;
+  display: block;
+}
+
+/* 3. Notification Chip */
+.notification-chip {
+  top: 195px;
+  left: 20px;
+  padding: 0.75rem 1.15rem;
+  border-radius: var(--radius-pill);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
+  z-index: 4;
+}
+
+.notif-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--color-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.notif-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.notif-headline {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.84rem;
+  color: #FFFFFF;
+}
+
+.notif-subtext {
+  font-size: 0.68rem;
+  color: #94A3B8;
+}
+
+/* 4. Circular Rotating Badge */
+.circular-badge-wrap {
+  position: absolute;
+  top: -20px;
+  right: 15px;
+  z-index: 5;
+}
+
+.circular-badge {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  animation: spinText 18s linear infinite;
+  transform-origin: center center;
+}
+
+.circular-badge__svg {
+  width: 100%;
+  height: 100%;
+}
+
+.circular-badge__text {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  fill: #FFFFFF;
+  text-transform: uppercase;
+}
+
+.circular-badge__center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--color-secondary);
+  border: 2px solid #111111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(198, 244, 50, 0.5);
+}
+
+.circular-badge__star {
+  color: #111111;
+  font-size: 1.4rem;
+  font-weight: 900;
+}
+
+@keyframes spinText {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .hero-section {
+    min-height: auto;
+    padding-top: 8rem;
+    padding-bottom: 5rem;
+  }
+
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  .hero-visual {
+    margin-top: 1rem;
+  }
+
+  .hero-stage {
+    height: 420px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-title {
+    font-size: clamp(2.5rem, 11vw, 3.8rem);
+  }
+
+  .hero-stage {
+    max-width: 340px;
+    height: 360px;
+  }
+
+  .crm-card {
+    width: 270px;
+    top: 5px;
+  }
+
+  .chart-card {
+    width: 250px;
+    bottom: 5px;
+  }
+
+  .notification-chip {
+    top: 145px;
+    left: 5px;
+    padding: 0.55rem 0.85rem;
+  }
+
+  .circular-badge {
+    width: 95px;
+    height: 95px;
+  }
+
+  .circular-badge__text {
+    font-size: 9px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .circular-badge {
+    animation: none;
+  }
+  .floating-card {
+    transform: none !important;
+  }
+}

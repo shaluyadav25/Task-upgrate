@@ -1,0 +1,124 @@
+.bg-media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+  background-color: #0A0F1F;
+}
+
+/* Picture & Poster */
+.bg-media__picture {
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.bg-media__poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: opacity 0.8s ease-in-out;
+  transform: scale(1);
+  will-change: transform, opacity;
+}
+
+.bg-media__poster--hidden {
+  opacity: 0;
+}
+
+/* Ken Burns slow cinematic camera motion */
+.bg-media__poster--ken-burns {
+  animation: kenBurns 24s ease-in-out infinite alternate;
+}
+
+@keyframes kenBurns {
+  0% {
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+  50% {
+    transform: scale(1.08) translate3d(-1%, -1%, 0);
+  }
+  100% {
+    transform: scale(1.15) translate3d(1%, 0.5%, 0);
+  }
+}
+
+/* Video Element */
+.bg-media__video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  will-change: opacity;
+}
+
+.bg-media__video--loaded {
+  opacity: 1;
+}
+
+/* Dark Gradient Overlay */
+.bg-media__overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Soft Vignette */
+.bg-media__vignette {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(10, 15, 31, 0) 30%,
+    rgba(10, 15, 31, 0.55) 75%,
+    rgba(10, 15, 31, 0.9) 100%
+  );
+  pointer-events: none;
+}
+
+/* Film Grain Texture */
+.bg-media__grain {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='heroNoise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23heroNoise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+/* Respect Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .bg-media__poster--ken-burns {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  .bg-media__poster,
+  .bg-media__video {
+    transition: none !important;
+  }
+}
+

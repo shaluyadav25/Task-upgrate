@@ -1,0 +1,33 @@
+.cursor-glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 440px;
+  height: 440px;
+  margin-left: -220px;
+  margin-top: -220px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10;
+  background: radial-gradient(
+    circle,
+    rgba(79, 70, 229, 0.12) 0%,
+    rgba(198, 244, 50, 0.06) 40%,
+    rgba(247, 245, 240, 0) 70%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease-out;
+  will-change: transform;
+  mix-blend-mode: multiply;
+}
+
+.cursor-glow--visible {
+  opacity: 1;
+}
+
+@media (hover: none), (pointer: coarse), (prefers-reduced-motion: reduce) {
+  .cursor-glow {
+    display: none !important;
+  }
+}
+
